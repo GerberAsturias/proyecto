@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de usuario</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'montserrat', sans-serif;
+      background: linear-gradient(rgba(68,13,13,0.35), rgba(38,2,2,0.446)), url(portada.png) no-repeat center/cover; 
+      background-attachment: fixed;
+      height: 100vh;
+      color: white;
+    }
+#primera-seccion1{
+	background: linear-gradient(rgba(68,13,13,0.35), 
+	rgba(38,2,2,0.446)),url(portada3.jpg) no-repeat center/cover; 
+	background-attachment: fixed;
+	height: 100vh;
+	color: white;
+	}
+	
+	#barra-navegacion{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto 5rem;
+	padding-top: 2rem
+	padding-bottom: 2rem;
+	}
+	
+	#logo {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-stretch: wider;
+	}
+
+	nav>a{
+	text-decoration: none;
+	color: white;
+	padding-left: 1rem;
+	padding-rigth: 1rem;
+	}
+
+	nav>a:hover{
+	color: #f1c40f;
+	}
+
+    h1  {
+      color: #fff;
+      font-family: 'montserrat', cursive;
+    }
+
+    form {
+      max-width: 400px;
+      border: 2px solid Yellow;
+      margin: 0 auto;
+      background-color: #2c3e50;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"], input[type="password"], select {
+      width: 90%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+  </style>
+
+</head>
+<body>
+<div id="primera-seccion1">
+	<div id="barra-navegacion">
+	<p id="logo"><span style="color:
+	#f1c40f;">Colegio</span><span style="color:
+	#3498db;"> La Salle </span></p>
+	
+	<nav>
+	<a href="index.html">Inicio</a>
+	<a href="usuario.html">Usuario</a>
+	<a href="cursos.html">Cursos</a>
+	</nav>
+	</div>
+  
+	<h1>Registro de usuario</h1>
+  <form id="registroForm">
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="apellido" placeholder="Apellido">
+    <input type="text" id="correo" placeholder="Ingresa tu correo">
+    <input type="password" id="contraseña" placeholder="Ingresa tu contraseña">
+    <select id="destino">
+      <option value="" disabled="" selected=""> Selecciona tu rol </option>
+      <option value="Estudiante">Estudiante</option>
+      <option value="Profesor">Catedrático</option>
+      <option value="Padre">Padre</option>
+    </select>
+
+    <h3>Nivel:</h3>
+    <label for="nivel1">Primaria y Preprimaria</label>
+    <input type="radio" id="nivel1" name="nivel" data-nombre="Paris, Francia">
+
+    <br><br>
+
+    <label for="nivel2">Básicos</label>
+    <input type="radio" id="nivel2" name="nivel" data-nombre="Básicos">
+
+    <br><br>
+
+    <label for="nivel3">Diversificado</label>
+    <input type="radio" id="nivel3" name="nivel" data-nombre="Diversificado">
+
+    <br><br>
+
+    <button type="button" onclick="registrarUsuario()">Registrar</button>
+  </form>
+
+  <script>
+    function registrarUsuario() {
+      // Obtener valores del formulario
+      var nombre = document.getElementById("nombre").value;
+      var apellido = document.getElementById("apellido").value;
+      var correo = document.getElementById("correo").value;
+      var contraseña = document.getElementById("contraseña").value;
+      var rol = document.getElementById("destino").value;
+      var nivel = document.querySelector('input[name="nivel"]:checked');
+
+      // Validar que todos los campos estén completos
+      if (!nombre || !apellido || !correo || !contraseña || !rol || !nivel) {
+        alert("Por favor, completa todos los campos del formulario.");
+        return;
+      }
+
+      // Mensaje de usuario registrado
+      alert("Usuario registrado correctamente. ¡Bienvenido, " + nombre + "!");
+    }
+  </script>
+
+	<!--footer-->
+	<footer>
+	<p>Antigua - Guatemala
+	email:info@lasalle.edu.gt</p>
+	<p>Copyrigth 2023<span Style="Color: #f1c40f;
+	"> Colegio La Salle Antigua Guatemala</span></p>
+	</footer>
+</body>
+</html>
